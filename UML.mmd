@@ -1,0 +1,62 @@
+classDiagram
+    class Course {
+        - string designation
+        - string name
+        - string grade
+        - int credit
+        + Course()
+        + setCourse(d, n, c, g)
+        + displayCourse()
+        + getDesignation()
+        + getName()
+        + getCredit()
+        + getGrade()
+    }
+
+    class Semester {
+        - string year
+        - string extension
+        - map~string,Course~ courselist
+        - vector~pair<string,string>~ sortedCourses
+        - float semGPA
+        - int totalCredits
+        - bool NumberOn
+        + Semester()
+        + setSemester(y, e)
+        + createCourse(input)
+        + deleteCourse(designation)
+        + returnCourse(designation)
+        + addToCourseList(identifier, designation, name, credit, grade)
+        + displaySemester()
+        + sortByGrade()
+        + sortByNumber()
+        + calcSemGPA()
+        + getYear()
+        + getExtension()
+        + getCourseList()
+        + getSemGPA()
+        + getTotalCredits()
+    }
+
+    class Transcript {
+        - string studentName
+        - map~string,Semester~ semList
+        - map~string,pair<string,int>~ gradeList
+        - float GPA
+        + Transcript()
+        + createSemester(input)
+        + deleteSemester(input)
+        + returnSemester(input)
+        + displaySummary()
+        + calculateGPA()
+        + addToSemesterList(identifier, year, extension)
+        + storeData()
+        + readData()
+        + addGrade()
+        + getSemester()
+        + getCourse()
+        + checkSPointer(Sptr)
+        + checkCPointer(Cptr)
+    }
+    Transcript *-- Semester : contains
+    Semester *-- Course : contains

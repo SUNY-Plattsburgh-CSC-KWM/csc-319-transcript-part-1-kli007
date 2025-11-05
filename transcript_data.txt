@@ -1,0 +1,14 @@
+Kevin Li
+0
+Semesters: 1
+
+[Semester]
+Year: 2021
+Extension: 10
+GPA: 0
+CourseCount: 3
+Courses: 
+2617 MAT101 Algebra 3 A
+2810 CSC112 Python 3 B-
+7189 PHY111 Physic1 3 A-
+
